@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiza Sentimenta</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f2f5; }
+        .container { background-color: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; width: 90%; max-width: 500px; }
+        h1 { color: #1c1e21; }
+        textarea { width: 100%; min-height: 100px; padding: 10px; border: 1px solid #dddfe2; border-radius: 6px; margin-bottom: 20px; font-size: 16px; resize: vertical; }
+        button { width: 100%; padding: 12px; background-color: #1877f2; color: white; border: none; border-radius: 6px; font-size: 18px; font-weight: bold; cursor: pointer; transition: background-color 0.2s; }
+        button:hover { background-color: #166fe5; }
+        #result { margin-top: 20px; font-size: 22px; font-weight: bold; padding: 15px; border-radius: 6px; transition: all 0.3s; }
+        .positive { color: #31a24c; background-color: #e9f6eb; }
+        .negative { color: #fa383e; background-color: #fde9e9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Analizator Sentimenta Teksta</h1>
+        <textarea id="text-input" placeholder="Unesite tekst na engleskom jeziku ovde..."></textarea>
+        <button onclick="analyzeSentiment()">Analiziraj</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        async function analyzeSentiment() {
+            const textInput = document.getElementById('text-input').value;
+            const resultDiv = document.getElementById('result');
+
+            resultDiv.innerHTML = 'Analiziram...';
+            resultDiv.className = '';
+
+            if (textInput.trim() === '') {
+                resultDiv.innerHTML = 'Molimo unesite tekst.';
+                return;
+            }
+
+            try {
+               
+                const response = await fetch('http://127.0.0.1:5000/predict', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ text: textInput })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Došlo je do greške na serveru.');
+                }
+
+                const data = await response.json();
+
+                if (data.sentiment === 'pozitivan') {
+                    resultDiv.innerHTML = 'Sentiment je: Pozitivan 😊';
+                    resultDiv.className = 'positive';
+                } else {
+                    resultDiv.innerHTML = 'Sentiment je: Negativan 😠';
+                    resultDiv.className = 'negative';
+                }
+
+            } catch (error) {
+                resultDiv.innerHTML = 'Greška. Proverite da li je server pokrenut.';
+                resultDiv.className = 'negative';
+                console.error('Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>
