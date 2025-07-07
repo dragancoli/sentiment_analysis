@@ -5,7 +5,7 @@ Ovaj projekat je napravljen kao portfolio projekat koji demonstrira ceo životni
 
 ## Demonstracija
 
-Korišćene tehnologije
+## Korišćene tehnologije
 Projekat je podeljen na dva glavna dela:
 Backend:
   Python 3
@@ -18,7 +18,7 @@ Frontend:
   CSS3 (čist CSS, bez frejmvorka)
   JavaScript (Vanilla JS sa Fetch API za komunikaciju sa backendom)
 
-Struktura projekta
+## Struktura projekta
 sentiment-analiza-projekat/
 │
 ├── sentiment_model.joblib        # Sačuvan i istreniran model (Logistic Regression)
@@ -31,31 +31,30 @@ sentiment-analiza-projekat/
 Postavljanje i pokretanje projekta lokalno
 Pratite sledeće korake da biste pokrenuli projekat na svom računaru.
 
-1. Klonirajte repozitorijum:
-
+### 1. Klonirajte repozitorijum:
 git clone https://github.com/tvoje-korisnicko-ime/sentiment-analiza-projekat.git
 cd sentiment-analiza-projekat
-2. Kreirajte i aktivirajte virtualno okruženje:
-# Kreiranje
+### 2. Kreirajte i aktivirajte virtualno okruženje:
+#### Kreiranje
 python -m venv venv
-# Aktivacija (Windows)
+#### Aktivacija (Windows)
 .\venv\Scripts\activate
-# Aktivacija (macOS/Linux)
+#### Aktivacija (macOS/Linux)
 source venv/bin/activate
-3. Instalirajte potrebne biblioteke:
+### 3. Instalirajte potrebne biblioteke:
 (Prvo, napravi requirements.txt fajl. U terminalu gde je aktivno virtualno okruženje, ukucaj pip freeze > requirements.txt. Ovo će automatski sačuvati sve biblioteke koje smo instalirali.)
 
 Zatim, bilo ko drugi može instalirati sve potrebne zavisnosti jednom komandom:
 
 pip install -r requirements.txt
 
-4. Pokrenite backend server:
+## 4. Pokrenite backend server:
 Uverite se da ste i dalje u projektnom folderu u terminalu.
 
 python app.py
 Server će se pokrenuti na http://127.0.0.1:5000. Nemojte zatvarati ovaj terminal.
 
-5. Otvorite aplikaciju:
+## 5. Otvorite aplikaciju:
 Pronađite index.html fajl u svom folderu i otvorite ga u bilo kom internet pregledaču (npr. duplim klikom).
 
 Sada možete da koristite aplikaciju!
