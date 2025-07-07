@@ -4,6 +4,7 @@ Jednostavna full-stack web aplikacija koja koristi mašinsko učenje za analizu 
 Ovaj projekat je napravljen kao portfolio projekat koji demonstrira ceo životni ciklus jednog proizvoda mašinskog učenja: od obrade podataka i treniranja modela, do kreiranja API-ja i funkcionalne web aplikacije.
 
 ## Demonstracija
+![image](https://github.com/user-attachments/assets/23ffc9cb-30bf-47cd-956c-a6464ac70bac)
 
 ## Korišćene tehnologije
 Projekat je podeljen na dva glavna dela:
@@ -77,7 +78,7 @@ Features: Tekst je pretvoren u numeričke vektore koristeći TF-IDF (Term Freque
 
 Performanse: Model postiže tačnost od približno ~80% na test setu koji sadrži 320.000 tvitova koje model nikada pre nije video.
 
-Moguća buduća unapređenja
+## Moguća buduća unapređenja
  - Implementacija naprednijeg modela (npr. fine-tuning nekog Transformer modela kao što je BERT).
 
  - Podrška za više jezika.
