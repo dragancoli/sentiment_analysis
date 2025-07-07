@@ -20,12 +20,19 @@ Frontend:
 
 ## Struktura projekta
 sentiment-analiza-projekat/
+
 │
+
 ├── sentiment_model.joblib        # Sačuvan i istreniran model (Logistic Regression)
+
 ├── sentiment_vectorizer.joblib   # Sačuvan TF-IDF vektorizator
+
 ├── app.py                        # Flask backend server i API
+
 ├── index.html                    # Frontend (korisnički interfejs)
+
 ├── requirements.txt              # Lista potrebnih Python biblioteka
+
 └── README.md                     # Ovaj fajl
 
 Postavljanje i pokretanje projekta lokalno
