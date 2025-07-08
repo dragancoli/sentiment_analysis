@@ -1,8 +1,6 @@
 # Analiza Sentimenta Teksta (Sentiment Analysis Project)
 Jednostavna full-stack web aplikacija koja koristi mašinsko učenje za analizu sentimenta teksta na engleskom jeziku. Korisnik unosi tekst, a aplikacija u realnom vremenu vraća predikciju da li je sentiment unetog teksta pozitivan ili negativan.
 
-Ovaj projekat je napravljen kao portfolio projekat koji demonstrira ceo životni ciklus jednog proizvoda mašinskog učenja: od obrade podataka i treniranja modela, do kreiranja API-ja i funkcionalne web aplikacije.
-
 ## Demonstracija
 ![image](https://github.com/user-attachments/assets/23ffc9cb-30bf-47cd-956c-a6464ac70bac)
 
