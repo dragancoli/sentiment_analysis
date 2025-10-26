@@ -1,86 +1,105 @@
-# Analiza Sentimenta Teksta (Sentiment Analysis Project)
-Jednostavna full-stack web aplikacija koja koristi mašinsko učenje za analizu sentimenta teksta na engleskom jeziku. Korisnik unosi tekst, a aplikacija u realnom vremenu vraća predikciju da li je sentiment unetog teksta pozitivan ili negativan.
+# 🧠 Text Sentiment Analysis (Sentiment Analysis Project)
 
-## Demonstracija
+A simple full-stack web application that uses machine learning to analyze the sentiment of English text.  
+The user enters text, and the application returns a real-time prediction indicating whether the sentiment of the entered text is **positive** or **negative**.
+
+---
+
+## 🎥 Demonstration
 ![image](https://github.com/user-attachments/assets/23ffc9cb-30bf-47cd-956c-a6464ac70bac)
 
-## Korišćene tehnologije
-Projekat je podeljen na dva glavna dela:
-Backend:
-  Python 3
-  Flask: Mikro web framework za kreiranje REST API-ja.
-  Scikit-learn: Biblioteka za mašinsko učenje (treniranje modela, vektorizacija, evaluacija).
-  Pandas: Za manipulaciju i pripremu podataka.
-  Joblib: Za čuvanje i učitavanje istreniranog modela.
-Frontend:
-  HTML5
-  CSS3 (čist CSS, bez frejmvorka)
-  JavaScript (Vanilla JS sa Fetch API za komunikaciju sa backendom)
+---
 
-## Struktura projekta
-sentiment-analiza-projekat/
+## 🛠️ Technologies Used
+
+The project is divided into two main parts:
+
+### **Backend**
+- **Python 3**
+- **Flask** – Micro web framework used to create a REST API.  
+- **Scikit-learn** – Machine learning library for model training, vectorization, and evaluation.  
+- **Pandas** – Used for data manipulation and preprocessing.  
+- **Joblib** – For saving and loading the trained model.
+
+### **Frontend**
+- **HTML5**  
+- **CSS3** (pure CSS, no frameworks)  
+- **JavaScript** (Vanilla JS using Fetch API for backend communication)
+
+---
+
+## 📂 Project Structure
+
+sentiment-analysis-project/
 
 │
 
-├── sentiment_model.joblib        # Sačuvan i istreniran model (Logistic Regression)
+├── sentiment_model.joblib # Saved trained model (Logistic Regression)
 
-├── sentiment_vectorizer.joblib   # Sačuvan TF-IDF vektorizator
+├── sentiment_vectorizer.joblib # Saved TF-IDF vectorizer
 
-├── app.py                        # Flask backend server i API
+├── app.py # Flask backend server and REST API
 
-├── index.html                    # Frontend (korisnički interfejs)
+├── index.html # Frontend (user interface)
 
-├── requirements.txt              # Lista potrebnih Python biblioteka
+├── requirements.txt # List of required Python libraries
 
-└── README.md                     # Ovaj fajl
+└── README.md # This file
 
-Postavljanje i pokretanje projekta lokalno
-Pratite sledeće korake da biste pokrenuli projekat na svom računaru.
+---
 
-### 1. Klonirajte repozitorijum:
-git clone https://github.com/tvoje-korisnicko-ime/sentiment-analiza-projekat.git
-cd sentiment-analiza-projekat
-### 2. Kreirajte i aktivirajte virtualno okruženje:
-#### Kreiranje
+## ⚙️ Setting Up and Running Locally
+
+Follow these steps to run the project on your local machine:
+
+### 1. Clone the repository:
+```bash
+git clone https://github.com/your-username/sentiment-analysis-project.git
+cd sentiment-analysis-project
+```
+
+### 2. Create and activate a virtual environment:
+#### Create the environment:
 python -m venv venv
-#### Aktivacija (Windows)
+#### Activate (Windows)
 .\venv\Scripts\activate
-#### Aktivacija (macOS/Linux)
+#### Activate (macOS/Linux)
 source venv/bin/activate
-### 3. Instalirajte potrebne biblioteke:
-(Prvo, napravi requirements.txt fajl. U terminalu gde je aktivno virtualno okruženje, ukucaj pip freeze > requirements.txt. Ovo će automatski sačuvati sve biblioteke koje smo instalirali.)
-
-Zatim, bilo ko drugi može instalirati sve potrebne zavisnosti jednom komandom:
-
-pip install -r requirements.txt
-
-## 4. Pokrenite backend server:
-Uverite se da ste i dalje u projektnom folderu u terminalu.
+### 3. Install required libraries:
+If you haven’t already, create a requirements.txt file.
+In the terminal (with the virtual environment active), run: 
+`pip install -r requirements.txt
+`
+### 4. Run the backend server:
+Make sure you are still inside the project directory in the terminal.
 
 python app.py
-Server će se pokrenuti na http://127.0.0.1:5000. Nemojte zatvarati ovaj terminal.
+The server will start at http://127.0.0.1:5000. Do not close this terminal window while the server is running.
 
-## 5. Otvorite aplikaciju:
-Pronađite index.html fajl u svom folderu i otvorite ga u bilo kom internet pregledaču (npr. duplim klikom).
+### 5. Open the application:
+Locate the index.html file in your project folder and open it in any web browser (e.g., by double-clicking). You can now start using the application!
 
-Sada možete da koristite aplikaciju!
 
-O modelu mašinskog učenja
-Dataset: Sentiment140 dataset sa 1.6 miliona tvitova na engleskom jeziku, označenih kao negativni (0) ili pozitivni (4).
+## About the Machine Learning Model
 
-Preprocessing: Tekst je očišćen uklanjanjem URL-ova, korisničkih imena (@mentions), znakova interpunkcije i pretvaranjem u mala slova.
+Dataset: Sentiment140 dataset containing 1.6 million English tweets labeled as negative (0) or positive (4).
 
-Model: Korišćen je Logistic Regression model zbog njegove brzine i dobrih performansi na problemima klasifikacije teksta.
+Preprocessing: The text is cleaned by removing URLs, user mentions (@mentions), punctuation, and converting all characters to lowercase.
 
-Features: Tekst je pretvoren u numeričke vektore koristeći TF-IDF (Term Frequency-Inverse Document Frequency), ograničen na 10.000 najvažnijih reči.
+Model: A Logistic Regression model was used for its speed and strong performance on text classification problems.
 
-Performanse: Model postiže tačnost od približno ~80% na test setu koji sadrži 320.000 tvitova koje model nikada pre nije video.
+Features: Text was transformed into numerical vectors using TF-IDF (Term Frequency–Inverse Document Frequency), limited to the 10,000 most important words.
 
-## Moguća buduća unapređenja
- - Implementacija naprednijeg modela (npr. fine-tuning nekog Transformer modela kao što je BERT).
+Performance: The model achieves approximately ~80% accuracy on a test set of 320,000 tweets not seen during training.
 
- - Podrška za više jezika.
+## Possible Future Improvements
 
- - Dodavanje baze podataka za čuvanje istorije analiza.
+ - Implement a more advanced model (e.g., fine-tuning a Transformer-based model such as BERT).
+
+ - Add support for multiple languages.
+
+ - Integrate a database to store analysis history.
+
+ - Deploy the application to a cloud platform (e.g., Heroku, Render) for public access.
 
  - Postavljanje aplikacije na neku cloud platformu (npr. Heroku, Render) kako bi bila javno dostupna.
